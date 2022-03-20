@@ -9,9 +9,11 @@ public class Auto {
 	static int cantidadCreados;
 	
 	int cantidadAsientos() {
-		int cantidad;
+		int cantidad=0;
 		for (int i=0; i<this.asientos.length; i++) {
-			if (this.asientos[i] instanceof Asiento) {cantidad++;};
+			if (this.asientos[i] instanceof Asiento) {
+				cantidad++;
+			};
 		}
 		return cantidad;
 	}
