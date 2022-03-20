@@ -9,14 +9,17 @@ public class Auto {
 	static int cantidadCreados;
 	
 	int cantidadAsientos() {
-		int cantidad = this.asientos.length;
+		int cantidad;
+		for (int i=0; i<this.asientos.length; i++) {
+			if (this.asientos[i] instanceof Asiento) {cantidad++;};
+		}
 		return cantidad;
 	}
 	
 	String verificarIntegridad() {
 		boolean asientosOriginales = true;
 		for (int i=0; i < this.asientos.length; i++) {
-			if (this.registro != this.asientos[i].registro) {
+			if (this.asientos[i] instanceof Asiento && this.registro != this.asientos[i].registro) {
 				asientosOriginales = false;
 				break;
 			}
